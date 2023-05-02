@@ -31,6 +31,15 @@ After pulling the image, run a container with your desired command:
 docker run -it --rm -v $(pwd):/workspace -w /workspace yriahi/tf-utils:latest <command>
 ```
 
-Replace `tagname` with the tag you used when pulling the image, and `<command>` with the desired tool command (e.g., `terraform`, `tflint`, `terraform-docs`, etc.).
+This command runs a Docker container using the `yriahi/tf-utils:latest` image in an interactive mode with a pseudo-TTY (-it), and removes the container after it has been stopped (--rm). It mounts the current working directory on your host system ($(pwd)) to the /workspace directory inside the container (-v $(pwd):/workspace). It sets the working directory inside the container to /workspace (-w /workspace). Finally, it runs a specified <command> within the container.
+
+Here's a breakdown of the options used in the command:
+
+- -it: Allocates a pseudo-TTY and runs the container in interactive mode, which allows you to interact with the container's shell or any interactive programs running inside the container.
+- --rm: Automatically removes the container when it exits. This helps to keep your system clean, as it prevents the accumulation of stopped containers.
+- -v $(pwd):/workspace: Mounts a volume from the host system to the container. In this case, it mounts the current working directory ($(pwd)) on the host to the /workspace - directory in the container. This allows you to share files and directories between the host and the container.
+- -w /workspace: Sets the working directory inside the container. All subsequent commands executed in the container will run in this directory. In this case, it's set to /workspace.
+- yriahi/tf-utils:latest: Specifies the Docker image to use for the container. In this case, it's the latest version of the yriahi/tf-utils image.
+- <command>: Represents the command that will be executed within the container. Replace `tagname` with the tag you used when pulling the image, and `<command>` with the desired tool command (e.g., `terraform`, `tflint`, `terraform-docs`, etc.).
 
 By mounting your working directory to the `/workspace` directory inside the container, you can directly work with your local Terraform configurations using the pre-installed tools.
