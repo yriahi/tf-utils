@@ -1,4 +1,4 @@
-[![Docker](https://github.com/yriahi/tf-utils/actions/workflows/docker.yml/badge.svg)](https://github.com/<your_username>/<your_repository>/actions/workflows/docker.yml)
+[![Docker](https://github.com/yriahi/tf-utils/actions/workflows/docker.yml/badge.svg)](https://github.com/yriahi/tf-utils/actions/workflows/docker.yml)
 
 # Terraform Utilities Docker Image
 
