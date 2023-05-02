@@ -1,3 +1,5 @@
+[![Docker](https://github.com/yriahi/tf-utils/actions/workflows/docker.yml/badge.svg)](https://github.com/<your_username>/<your_repository>/actions/workflows/docker.yml)
+
 # Terraform Utilities Docker Image
 
 This Docker image is designed to provide a convenient environment for working with Terraform projects. It comes pre-installed with a variety of tools that help manage, lint, and document Terraform configurations.
