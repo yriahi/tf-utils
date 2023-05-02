@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - master
+  pull_request:
+    # Only following types are handled by the action, but one can default to all as well
+    types: [opened, reopened, synchronize]
 
 permissions:
   # write permission is required to create a github release
