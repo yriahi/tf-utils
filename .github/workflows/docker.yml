@@ -30,13 +30,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: |
-            yriahi/tf-utils:latest
-            # e.g. yriahi/tf-utils:branch-main
-            # yriahi/tf-utils:branch-${{ github.ref_name }}
-            # yriahi/tf-utils:00000000000000000
-            # yriahi/tf-utils:${{ github.sha }}
-          
+          tags: yriahi/tf-utils:latest          
           # 
           # Cache Docker layers to speed up build times:
           # Utilize the BuildKit cache to speed up consecutive builds by caching intermediate Docker layers.
