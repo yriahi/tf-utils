@@ -6,6 +6,11 @@ on:
       - main # You can also use other branch names or tags instead of "main"
       - master # You can also use other branch names or tags instead of "main"
 
+permissions:
+  contents: write
+  packages: write  
+  issues:  read
+ 
 jobs:
   release-drafter:
     runs-on: ubuntu-latest
