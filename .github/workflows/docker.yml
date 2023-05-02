@@ -10,14 +10,17 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Set up QEMU
+      # This GitHub Actions step sets up QEMU (Quick Emulator) on the runner using the docker/setup-qemu-action action.
+      # QEMU is an open-source hardware emulator and virtualization tool that enables developers to run and test software on different CPU architectures. 
+      # It is often used in conjunction with Docker to build and test multi-architecture container images.
+      - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
-      -
-        name: Set up Docker Buildx
+      
+      # Docker Buildx is an experimental feature in Docker that extends the functionality of the traditional Docker build command, enabling developers to build multi-architecture container images using a single Dockerfile and command.
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      -
-        name: Login to Docker Hub
+      
+      - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
