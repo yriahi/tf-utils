@@ -1,12 +1,18 @@
 FROM alpine:latest
 
 # Install dependencies
-RUN apk add --no-cache git curl unzip bash python3 py-pip jq
+RUN apk add --no-cache git curl unzip bash python3 py-pip jq vim
+
+# Install AWS CLI
+RUN pip install awscli
 
 # Install tfswitch
-ARG TFSWITCH_VERSION=0.15.0
-RUN curl -L -o /usr/local/bin/tfswitch https://github.com/warrensbox/terraform-switcher/releases/download/${TFSWITCH_VERSION}/terraform-switcher_${TFSWITCH_VERSION}_linux_amd64 \
-    && chmod +x /usr/local/bin/tfswitch
+ARG TFSWITCH_VERSION=0.13.1308
+RUN wget https://github.com/warrensbox/terraform-switcher/releases/download/${TFSWITCH_VERSION}/terraform-switcher_${TFSWITCH_VERSION}_linux_arm64.tar.gz \
+    && tar -xzf terraform-switcher_${TFSWITCH_VERSION}_linux_arm64.tar.gz \
+    && mv tfswitch /usr/local/bin/tfswitch \
+    && chmod +x /usr/local/bin/tfswitch \
+    && rm terraform-switcher_${TFSWITCH_VERSION}_linux_arm64.tar.gz
 
 # Install tfenv
 ARG TFENV_VERSION=v2.2.2
