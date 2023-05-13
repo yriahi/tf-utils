@@ -1,5 +1,7 @@
 FROM alpine:latest
 
+ENV AWS_DEFAULT_REGION=us-east-1
+
 # Install dependencies
 RUN apk add --no-cache git curl unzip bash python3 py-pip jq vim
 
