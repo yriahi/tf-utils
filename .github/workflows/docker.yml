@@ -14,7 +14,7 @@ jobs:
       # QEMU is an open-source hardware emulator and virtualization tool that enables developers to run and test software on different CPU architectures. 
       # It is often used in conjunction with Docker to build and test multi-architecture container images.
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
       
       # Docker Buildx is an experimental feature in Docker that extends the functionality of the traditional Docker build command, enabling developers to build multi-architecture container images using a single Dockerfile and command.
       - name: Set up Docker Buildx
